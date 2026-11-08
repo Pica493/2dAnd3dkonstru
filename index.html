@@ -2002,7 +2002,7 @@ const GenGame = {
     for (let i = 0; i < 5; i++) s.spawn('heart', 200 + Math.random() * 1600, 200 + Math.random() * 1100);
     if (opts.dialogs || opts.quests) { const npc = s.spawn('npc', 400, 400); npc.dialogId = 'npc_main'; if (opts.hints && opts.hints.player) this._applyModel(npc, opts.hints.player); s.dialogs = { npc_main: { start: 'hi', nodes: { hi: { text: 'Приветствую!', choices: [{ text: 'Дай квест', next: 'quest' }, { text: 'Пока', next: 'end' }] }, quest: { text: 'Убей врагов.', choices: [{ text: 'ОК', next: 'end' }] } } } }; }
     s.spawn('checkpoint', 1200, 800); g.scenes.game = s; g.startScene = 'menu'; return g;
-  }
+  },
   racer(opts) {
   opts = opts || {};
   const g = new Game();
