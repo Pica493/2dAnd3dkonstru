@@ -2148,6 +2148,21 @@ document.getElementById('btnFinalHelp').onclick = showFinalHelp;
   ['Платформер с боссом', 'RPG с эльфом-магом', 'Космический шутер', 'Помощь'].forEach(c => { const el = document.createElement('div'); el.className = 'chip'; el.textContent = c; el.onclick = () => AIv3.handleUserMessage(c); chipsEl.appendChild(el); });
 })();
 
+(function initEditor2D() {
+  const init = () => {
+    if (window.Editor2D) {
+      Editor2D.init();
+    }
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+(async function finalBoot() {
+  
 (async function finalBoot() {
   QLearning.load();
   try { await Boot.run(); } catch (e) {}
